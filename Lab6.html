@@ -47,7 +47,7 @@
         async function getLocality(latitude, longitude) {
             const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
             const data = await response.json();
-            return data.locality || 'Locality not found';
+            return data.locality;
         }
 
         function displayMarker(index, latitude, longitude, locality) {
